@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-+package net.pyrosystems.android.slayersdemo;
+package net.pyrosystems.android.slayersdemo.di;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.app.Application;
+import android.content.Context;
 
-public class MainActivity extends AppCompatActivity {
+import dagger.Binds;
+import dagger.Module;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
+@Module
+public abstract class AppModule {
+
+    @Binds
+    abstract Context provideContext(Application application);
 }
